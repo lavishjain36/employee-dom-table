@@ -1,31 +1,67 @@
-//Function to create a HTML elements
-function createNode(element){
-  return document.createElement(element);
+//Write a logic to search the data 
+
+function search(){
+  const url="https://jsonplaceholder.typicode.com/users"
+
+  fetch(url)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(users){
+    //Call a function which take users as a parameter
+    getData(users);
+  })
+  //Error using catch block 
+  .catch(function(error){
+    console.log(error);
+  })
 }
 
 
-//Function that should append the element with parent 
 
-function append(parent, el){
-  return parent.appendChild(el);
+function getData(users){
+//will use div which contains empty result
+let userDiv=document.querySelector("#users")
+userDiv.innerHTML="";
+
+
+//create a table element 
+let table =document.createElement("table")
+
+
+//Iterate over user data 
+users.forEach(function(currentUser){
+  //create a row 
+  let row =table.insertRow();
+ let name= row.insertCell()
+ name.innerHTML=currentUser.name;
+
+ let city=row.insertCell()
+  city.innerHTML=currentUser.address.city;
+
+  let email=row.insertCell()
+  email.innerHTML=currentUser.email;
+
+  let phone=row.insertCell()
+  phone.innerHTML=currentUser.phone;
+
+  let website=row.insertCell()
+  website.innerHTML=currentUser.website;
+
+  let company=row.insertCell()
+  company.innerHTML=currentUser.company.name;
+
+  let company_catch=row.insertCell()
+  company_catch.innerHTML=currentUser.company.catchPhrase;
+  
+})
+
+
+
+//Append the data of the table with user div 
+userDiv.appendChild(table);
+
 }
 
 
-const ul=document.getElementById('imglst');
-
-const url="https://randomuser.me/api/?results=100";
-
-fetch(url).then((resp)=>resp.json()).then(function(data){
-
-  let authors=data.results;
-return authors.map(function(author){
-  let li=createNode('li')
-  let img=createNode('img');
-  let span=createNode('span');
-  img.src=author.picture.large
-  span.innerHTML=`${author.name.first} ${author.name.last} ${author.email}`;
-  append(li,img);
-  append(li,span);
-  append(ul,li);
-})
-})
+// async await with more exericse and dom manipulation 
