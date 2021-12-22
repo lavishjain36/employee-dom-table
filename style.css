@@ -1,11 +1,46 @@
-table{
-    border-collapse:collapse;
-    border:1px solid #ccc;
-    width:100%;
-
+section{
+    padding: 20px;
+    text-align: center;
 }
 
-table,tr,td{
-    border:3px solid #ccc;
-    padding:10px;
+button{
+    font-size: 20px;
+    background-color: #0b297a;
+    color: aqua;
+}
+
+button:hover{
+    background-color: #89f112;
+    color: rgb(75, 15, 30);
+}
+
+
+table,th,td{
+    border: 3px solid rgb(52, 4, 107);
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+
+table{
+    width: 100%;
+    margin-top: 0px;
+    box-shadow: 0 0 10px rgb(245, 53, 53)
+}
+
+table thead{
+    background-color: #5c82e9;
+    color: rgb(6, 34, 34);
+}
+
+table tbody{
+    background-color: #7a7373;
+}
+
+
+.inputField{
+    font-size:30px;
+    border:2px solid rgb(146, 14, 117);
+    outline: none
+    
 }

@@ -9,9 +9,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
- <button onclick="search()">Submit</button>
- <div id="users"></div>
+  <section>
+    <button id="all-emp-btn">All Employee</button>
+    <button id="male-emp-btn">Male Employee</button>
+    <button id="female-emp-btn">Female Employee</button>
+    <br><br>
+
+    <!-- //create a search Functionality  -->
+    <form action="">
+      <input type="search" placeholder="Search Here" class="inputField" id="search-box">
+    </form>
+ 
+<br><br>
+    <!-- //Employee Table  -->
+      <table>
+        <thead>
+          <tr>
+            <th>SNO</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>IP Address</th>
+          </tr>
+        </thead>
+
+        <tbody id="table-body"></tbody>
+      </table>
+
+
+
+  </section>
+ 
 <script src="script.js"></script>
 </body>
 
